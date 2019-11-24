@@ -13,6 +13,25 @@ class Hand
   private
 
   def categorize
-    'high-card'
+    suits = @cards.map {|card| card.suit}
+    p suits
+    faces = @cards.map {|card| card.face}
+    p faces
+
+    
+    sort = @cards.map {|card| card.ordinal}.sort
+    p sort
+     p sort[4] 
+    
+    if @cards[0].suit == @cards[1].suit && @cards[0].suit == @cards[2].suit && @cards[0].suit == @cards[3].suit && @cards[0].suit == @cards[4].suit
+         'flush'
+        
+   
+        
+         'flush'
+         
+    else
+         'high-card'
+    end
   end
 end
